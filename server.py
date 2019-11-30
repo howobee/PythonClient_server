@@ -5,7 +5,7 @@ import time
 host = socket.gethostbyname(socket.gethostname())
 port = 9090
 
-# Создаем пустой список для будущих клиентов
+# Создаем пустой список для адресов будущих клиентов
 clients = []
 
 #Создаем сокет используя Ip4 и протокол UDP
