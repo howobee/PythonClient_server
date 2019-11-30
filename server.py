@@ -3,9 +3,7 @@ import time
 
 #Получаем порт и ip нашего сервера
 host = socket.gethostbyname(socket.gethostname())
-
-
-port = 5050
+port = 9090
 
 # Создаем пустой список для адресов будущих клиентов
 clients = []
@@ -44,5 +42,5 @@ while not quit:
 		print("\n<Server Stopped>")
 		quit = True
 		
-# Закрываем соке
+# Закрываем сокет
 s.close()

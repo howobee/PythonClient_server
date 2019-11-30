@@ -17,11 +17,11 @@ def receving(name, sock):
 				data, addr = sock.recvfrom(1024)
 				print(data.decode("utf-8"))
 				
-				# Шифрование сообщений перед отправкой на сервер
+				# Дешифрование сообщений перед печатанием
 				#BEGIN
 				decrypt = ""; k = False
 				for i in data.decode("utf-8"):
-					if i == ":" :
+					if i == ":":
 						k = True
 						decrypt += i
 					elif k == False	or i == " ":
@@ -40,7 +40,7 @@ host = socket.gethostbyname(socket.gethostname())
 port = 0
 
 # Ищем аддрес сервера
-server = (' ', 5050 )			
+server = ('192.168.0.16', 9090)			
 
 #Создаем сокет используя Ip4 и протокол UDP
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -61,6 +61,7 @@ while shutdown == False:
 		join = True
 	else:
 		try:
+			
 			message = input()
 			
 			#BEGIN
@@ -70,7 +71,7 @@ while shutdown == False:
 			message = crypt
 			#END
 			
-			if message != " ":
+			if message != "":
 				s.sendto(("["+alias + "] :: "+message).encode("utf-8"), server)
 			time.sleep(0.2)
 		except:
