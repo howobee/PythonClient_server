@@ -3,7 +3,9 @@ import time
 
 #Получаем порт и ip нашего сервера
 host = socket.gethostbyname(socket.gethostname())
-port = 9090
+
+
+port = 5050
 
 # Создаем пустой список для адресов будущих клиентов
 clients = []
